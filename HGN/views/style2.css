@@ -1,0 +1,97 @@
+body{
+	background-image: url(img/fondo2.jpg); 
+	border-style: dotted; 
+
+	
+}
+
+
+
+header{
+	border-style: dotted; 	
+	width: 100%;
+	height: 300px;	
+}
+
+main{
+	width: 100%;
+	height: 500px;
+}
+
+
+
+#logo{
+
+	position: relative;
+	width: 250px;
+	height: 250px;
+	left: 25px;
+	top: 50px;
+	transition: all 1s;
+}
+
+#logo:hover{
+
+	transform: rotate(360deg);
+	
+}
+
+#linea{
+	position: absolute;
+	top: 175px;
+	left: 270px;
+	width: 1095px;
+	height: 16px;
+	background-color: black;
+}
+
+.cat{
+	position: relative;
+	height: 100px;
+	width: auto;
+	top: -70px;
+	left: 50px;
+	padding-right: 20px;
+	padding-bottom: 8px;
+
+}
+
+
+.Pokedex{
+	position: relative;
+	height: 180px;
+	width: auto;
+	top: -60px;
+	left: 160px;
+	src="img/Pokedex1.png" onmouseover="this.src='img/Pokedex2.png';" onmouseout="this.src='img/Pokedex1.png';";
+}
+
+.Pokedex2{
+	position: relative;
+	height: 200px;
+	width: auto;
+	top: 0px;
+	left: 800px;
+}
+
+
+
+
+footer{
+	border-style: dotted; 
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	top:1000px;
+}
+
+footer p{
+	font-size: 15px;
+	font-family: sans-serif;
+	color: #21232c;
+}
+
+footer a{
+	text-decoration:none;  
+	color: #21232c; 
+}
