@@ -26,7 +26,8 @@
 			echo date("d-m-Y", $time);
 			?>
 		</div>
-
+	<div id="nombreCategoria">#NOMBRE DE LA CATEGORÍA</div>
+	
 	<div id="linea2"></div>	
 	
 	<div id="CuerpoNoticia">
