@@ -191,6 +191,17 @@ footer a{
 }
 
 /*********************************************
+****NOMBRE DE LA CATEGORIA*******************/
+#nombreCategoria{
+	float: right;
+	margin-top: -30px;
+	margin-right: 200px;
+	font-family: Georgia;
+	font-size: 25px;
+}
+
+
+/*********************************************
 ***** CUERPO DE LA NOTICIA ******************/
 #CuerpoNoticia{
 	padding: 3px 10px;
