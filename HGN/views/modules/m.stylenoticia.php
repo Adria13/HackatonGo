@@ -1,0 +1,1 @@
+<link rel="stylesheet" href="views/css/style_noticia.css">
