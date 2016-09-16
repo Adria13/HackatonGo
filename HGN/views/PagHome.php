@@ -10,11 +10,11 @@
 
 
 <header>
-	<img id="logo" src="img/logo.png"></img>
-	<a href="#"><img class="cat" src="img/actua.png"></img></a>
-	<a href="#"><img class="cat" src="img/sucesos.png"></img></a>
-	<a href="#"><img class="cat" src="img/trucos.png"></img></a>
-	<a href="#"><img id="dex" src="img/pokedex1.png" onclick="this.src='img/Pokedex2.png';" onmouseout="this.src='img/Pokedex1.png';"/></img></a>
+	<a href="PagHome.php"><img id="logo" src="img/logo.png"></img></a>
+	<a href="PagNew.php"><img class="cat" src="img/actua.png"></img></a>
+	<a href="PagNew.php"><img class="cat" src="img/sucesos.png"></img></a>
+	<a href="PagNew.php"><img class="cat" src="img/trucos.png"></img></a>
+	<a href="loginregistro.php"><img id="dex" src="img/pokedex1.png" onmouseover="this.src='img/dex2.png';" onmouseout="this.src='img/Pokedex1.png';"/></img></a>
 
 	<div id="linea1"></div>	
 </header>	
@@ -59,8 +59,7 @@
 </content>
 
 	<footer>
-		<p>Hackathon GO NEWS | <a href="http://goo.gl/x4tE2M">Pokemon GO official web</a></p>
-
+		<p>Hackathon GO NEWS | <a href="http://www.pokemongo.com/es-es/">Pokemon GO official web</a></p>
 	</footer>
 
 

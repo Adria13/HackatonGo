@@ -64,18 +64,18 @@ body{
 	transition: all 1s;
 	transform: scale(1);
 	z-index: 1;
+	text-align: right;
 	
 }
 
-#dex:hover{
+
+
+#dex:hover {
 	position: absolute;
 	margin-top: 222px;
 	margin-left: -340px;
 	transition: all 1s;
-	transform: scale(3.5) rotate(-30deg);
-
-
-
+	transform: scale(3.5) rotate(-24deg);
 }
 
 
@@ -172,6 +172,43 @@ footer a{
 	color: #21232c; 
 }
 
+/*/////////////FORMULARIOS///////////////*/
+
+.form{
+	margin-left: 460px;
+	/*background-image: url("img/pokes2.jpg");*/
+	background-color: #262626;
+	margin-right: 500px;
+	margin-bottom: 50px;
+	padding:80px;
+	
+	border-radius: 18px 18px 18px 18px;
+	-moz-border-radius: 18px 18px 18px 18px;
+	-webkit-border-radius: 18px 18px 18px 18px;
+	border: 0px solid #000000;	
+	/*///fuente///*/
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+	font-family: "Arial", Georgia, Serif;
+
+}
+
+input[type="text"],input[type="password"] {
+
+	background-color: #8c8c8c;
+	border: none;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 8px 8px 8px 8px;
+	color: #fff;
+}
 
 
+input[type="submit"]{
 
+	margin-left: 100px;	
+	border-radius: 8px 8px 8px 8px;
+	height: 30px;
+	width: 100px;
+}
