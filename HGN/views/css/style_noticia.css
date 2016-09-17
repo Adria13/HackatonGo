@@ -148,7 +148,7 @@ content{
 
 #part2{
 
-	margin-top: 200px;
+	margin-top: 50px;
 	width: auto;
 	height: 100%;
 	padding: 40px;
@@ -160,11 +160,11 @@ content{
 
 footer{
 	
-	position: absolute;
+	position: relative;
 	width: 95%;
 	height: auto;
 	text-align: center;
-	top:1200px;
+	top: 50px;
 }
 
 footer p{
@@ -261,13 +261,31 @@ footer a{
 	background-color: black;
 }
 
+.pball{
+	display: inline-block;
+	border: 2px solid black;
+	border-radius: 50px;
+	width: 250px;
+	height: 50px;
+	margin-left:5px;
+}
+
+.valora{
+	display: inline;
+	opacity:0;
+}
+
+.valora:hover{
+	opacity:1;
+}
+
 /*************************************
 ******NOTICIAS POR CATEGORIA ********/
 
 
 #noticiaCategoriaIzq{
 	margin-top:15px;
-	width: 600px;
+	width: 48%;
 	height:250px;
 	border-radius: 25px 25px 25px 25px;
 -moz-border-radius: 25px 25px 25px 25px;
@@ -277,7 +295,7 @@ border: 3px solid #000000;
 }
 #noticiaCategoriaDer{
 	margin-top:15px;
-	width: 600px;
+	width: 48%;
 	height:250px;
 	border-radius: 25px 25px 25px 25px;
 -moz-border-radius: 25px 25px 25px 25px;
@@ -286,16 +304,16 @@ border: 3px solid #000000;
 	float: right;
 }
 
-#tituloCategoria{
+.tituloCategoria{
 	margin-left: 260px;
 	margin-top:10px;
 	font-family:Georgia;
 	font-size:20px;
 	font-style: bold;
-	width: 320px;
+	width: 50%;
 	
 }
-#subtituloCategoria{
+.subtituloCategoria{
 	margin-left: 260px;
 	margin-top:20px;
 	font-family:Georgia;
@@ -305,21 +323,32 @@ border: 3px solid #000000;
 	
 }
 
-#cuerpoCategoria{
+.cuerpoCategoria{
 	margin-left: 260px;
 	margin-top:15px;
 	font-family:Georgia;
 	font-size:10px;
 	font-style: bold;
-	width: 320px;
-	height: 120px;
-	
+	width: 49%;
+	height: 33px;
+	overflow-y: hidden;
 }
 
-#imgCategoria{
+.etc{
+	margin-left: 260px;
+	margin-bottom: 10px;
+	font-family:Georgia;
+	font-size:10px;
+	font-style: bold;
+	width: 49%;
+	height: auto;
+}
+
+.imgCategoria{
 	float:left;
 	width:250px;
 	height: 250px;
+	border-radius: 25px;
 
   	
 }
