@@ -4,6 +4,7 @@ class Database{
 	public function conectar(){
 		$this->conexion=mysqli_connect("localhost","root","","pokemon");
 		//$this->conexion=mysqli_connect("...:","usuario","","nombre");
+		$acentos=mysqli_query($this->conexion, "SET NAMES 'utf8'");
 		return $this->conexion;
 	}
 	public function consulta($sentencia){

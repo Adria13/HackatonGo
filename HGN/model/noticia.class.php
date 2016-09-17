@@ -40,7 +40,7 @@
 					$this->desconectar();
 					return $array;
 				}else{
-	 				echo "Error con la sentencia";
+	 				echo "Error con la sentencia listar todas";
 				}
 			}else{
 				echo "Error al conectar con la base de datos";
@@ -61,17 +61,15 @@
 					$this->desconectar();
 					return $array;
 				}else{
-	 				echo "Error con la sentencia";
+	 				echo "Error con la sentencia listar";
 				}
 			}else{
 				echo "Error al conectar con la base de datos";
 			}
 		}
-		function relacionadas($not){
+		function categoria($not){
 			if($c=$this->conectar()){
-				$sentencia="SELECT * FROM noticia WHERE Id_noticia=(
-SELECT Id_noticia FROM not_cat WHERE Id_categoria=(
-SELECT c.Id_categoria FROM noticia n JOIN not_cat c WHERE n.Id_noticia=c.Id_noticia AND n.Id_noticia=".$not.")) LIMIT 2";
+				$sentencia="SELECT * FROM categoria c JOIN not_cat n WHERE n.Id_categoria=c.Id_categoria AND n.Id_noticia=".$not;
 				if($this->consulta($sentencia)){
 					$resultado=$this->consulta($sentencia);
 					//var_dump($resultado);
@@ -83,7 +81,30 @@ SELECT c.Id_categoria FROM noticia n JOIN not_cat c WHERE n.Id_noticia=c.Id_noti
 					$this->desconectar();
 					return $array;
 				}else{
-	 				echo "Error con la sentencia";
+	 				echo "Error con la sentencia categoria";
+				}
+			}else{
+				echo "Error al conectar con la base de datos";
+			}
+		}
+
+
+
+		function relacionadas($cat){
+			if($c=$this->conectar()){
+				$sentencia="SELECT * FROM noticia n JOIN not_cat c WHERE n.Id_noticia=c.Id_noticia AND c.Id_categoria=".$cat." LIMIT 2";
+				if($this->consulta($sentencia)){
+					$resultado=$this->consulta($sentencia);
+					//var_dump($resultado);
+					while($objeto=mysqli_fetch_object($resultado)){
+						//var_dump($objeto);
+						$array[]=$objeto;
+					}
+					//var_dump($array);
+					$this->desconectar();
+					return $array;
+				}else{
+	 				echo "Error con la sentencia relacionadas";
 				}
 			}else{
 				echo "Error al conectar con la base de datos";
@@ -102,7 +123,7 @@ SELECT c.Id_categoria FROM noticia n JOIN not_cat c WHERE n.Id_noticia=c.Id_noti
 					//var_dump($array);
 					$this->desconectar();
 				}else{
-	 				echo "Error con la sentencia";
+	 				//echo "Error con la sentencia valoración";
 				}
 				//var_dump($array);
 				$valor=0;
