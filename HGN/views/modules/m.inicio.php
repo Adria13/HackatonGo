@@ -1,4 +1,4 @@
-
+<content>
 
 	<img id="pika" src="img/Pikachu.png"></img>
 	<img id="slider" src="img/movil.png">
@@ -26,4 +26,4 @@
 	}
 </script>
 	<img id="char" src="img/Charizard.png"></img>
-	
+</content>
