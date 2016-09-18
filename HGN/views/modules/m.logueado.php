@@ -1,0 +1,1 @@
+<a href="index.php?action=login"><img id="log" src="img/PokedexUsuario.png"><span id="user">¡Bienvenido<br>

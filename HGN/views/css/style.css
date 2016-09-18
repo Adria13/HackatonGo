@@ -9,6 +9,10 @@ body{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#ffd700', GradientType=1 );
 }
 
+a{
+	text-decoration: none;
+	color: white;
+}
 
 #logo{
 
@@ -50,30 +54,20 @@ body{
 }
 
 .cat:hover{
-
 	transform: scale(1.2);
 }
 
-#pokedex{
-    position: absolute;
-	height: 160px;
-	margin-top: -10px;
-	margin-left: 175px;
-	transition: all 1s;
-	transform: scale(1);
-	z-index: 1;
-	
-}
-
-.imanot{
-	display: block-inline;
-	height: 100px;
+.bandera{
+	height: 20px;
 	width: auto;
+    border: 1px solid black;
 }
 
 #dex{
     position: absolute;
 	height: 160px;
+	margin-top: -10px;
+	margin-left: 100px;
 	transition: all 1s;
 	transform: scale(1);
 	z-index: 1;
@@ -82,20 +76,29 @@ body{
 
 #dex:hover{
 	position: absolute;
-	margin-top: 222px;
-	margin-left: -340px;
+	margin-top: 350px;
+	margin-left: 50px;
 	transition: all 1s;
-	transform: scale(3.5) rotate(-30deg);
-
-
+	transform: scale(3);
+		-webkit-filter: blur(20%)
+	filter: blur(20%);
 
 }
 
+#log{
+	position: absolute;
+	height: 30%;
+	margin-top: -10px;
+	margin-left: 0px;
+	z-index:1;
+}
 
-span{
-	display:none;
-	visibility: hidden;
-	opacity: 0;
+#user{
+	position: absolute;
+	font-size: 10px;
+	margin-top: 150px;
+	margin-left: 100px;
+	z-index:2;
 }
 
 content{
@@ -141,48 +144,89 @@ content{
 
 	margin-top: 200px;
 	width: auto;
-	height: 100%;
-	padding: 40px;
-	background-image: url("img/pokes.jpg");
-	
+	/*	background-image: url("/HGN/img/pokes.jpg");*/
 	border-radius: 18px 18px 18px 18px;
 	-moz-border-radius: 18px 18px 18px 18px;
 	-webkit-border-radius: 18px 18px 18px 18px;
 	border: 0px solid #000000;
 
 }
-.valora{
-	display: inline;
-	opacity:0;
-}
 
-.valora:hover{
-	opacity:1;
-}
 
 .news{
-
 	z-index: 1;
-	opacity: 2;
+	opacity: 1;
 	margin: 20px;
 	height: 250px;
 	width: 90%;
-
+	color: white;
 	background-color: rgba(51, 51, 51, 1);
-
 	border-radius: 18px 18px 18px 18px;
 	-moz-border-radius: 18px 18px 18px 18px;
 	-webkit-border-radius: 18px 18px 18px 18px;
-	border: 0px solid #000000;
-
+	border: 3px solid #000000;
+	text-decoration: none;
 }
+
+.tituloNews{
+	margin-left: 260px;
+	margin-top: 10px;
+	font-family:Georgia;
+	font-size:20px;
+	font-style: bold;
+	width: 70%;
+	text-decoration: none;
+}
+
+.cuerpoNews{
+	margin-left: 260px;
+	margin-top:15px;
+	font-family:Georgia;
+	font-size:10px;
+	font-style: bold;
+	width: 70%;
+	height: 33px;
+	overflow-y: hidden;
+}
+
+.etc{
+	margin-left: 260px;
+	margin-bottom: 10px;
+	font-family:Georgia;
+	font-size:10px;
+	font-style: bold;
+	width: 70%;
+	height: auto;
+}
+
+.imgNews{
+	float:left;
+	width:250px;
+	height: 250px;
+	border-radius: 15px;
+	margin-right: 15px;
+	
+}
+
+
+.pball{
+	display: inline-block;
+	border: 2px solid black;
+	border-radius: 50px;
+	width: 250px;
+	height: 50px;
+	margin-left:5px;
+	vertical-align: middle;
+}
+
 
 footer{
 	
-	position: absolute;
+	position: relative;
 	width: 95%;
 	height: auto;
 	text-align: center;
+	top: 50px;
 	
 }
 
@@ -195,4 +239,44 @@ footer p{
 footer a{
 	text-decoration:none;  
 	color: #21232c; 
+}
+
+/*/////////////FORMULARIOS///////////////*/
+
+.form{
+	margin-left: 460px;
+	/*background-image: url("img/pokes2.jpg");*/
+	background-color: #262626;
+	margin-right: 500px;
+	margin-bottom: 50px;
+	padding:80px;
+	border-radius: 18px 18px 18px 18px;
+	-moz-border-radius: 18px 18px 18px 18px;
+	-webkit-border-radius: 18px 18px 18px 18px;
+	border: 0px solid #000000;	
+	/*///fuente///*/
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+	font-family: "Arial", Georgia, Serif;
+
+}
+
+input[type="text"],input[type="password"] {
+
+	background-color: #8c8c8c;
+	border: none;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 8px 8px 8px 8px;
+	color: #fff;
+}
+
+
+input[type="submit"]{
+
+	margin-left: 100px;	
+	border-radius: 8px 8px 8px 8px;
+	height: 30px;
+	width: 100px;
 }

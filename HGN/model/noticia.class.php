@@ -22,10 +22,6 @@
 			}
 		}
 
-		function resumen(){
-
-		}
-
 		function listartodas(){
 			if($c=$this->conectar()){
 				$sentencia="SELECT * FROM noticia";
@@ -90,9 +86,10 @@
 
 
 
-		function relacionadas($cat){
+		function relacionadas($not,$cat){
 			if($c=$this->conectar()){
-				$sentencia="SELECT * FROM noticia n JOIN not_cat c WHERE n.Id_noticia=c.Id_noticia AND c.Id_categoria=".$cat." LIMIT 2";
+				$sentencia="SELECT * FROM noticia n JOIN not_cat c WHERE n.Id_noticia=c.Id_noticia AND c.Id_categoria=".$cat. " AND n.Id_noticia <>".$not." LIMIT 2";
+				//var_dump($sentencia);
 				if($this->consulta($sentencia)){
 					$resultado=$this->consulta($sentencia);
 					//var_dump($resultado);
