@@ -57,25 +57,134 @@ class mvc_controller{
 				$contenido=$contenido.'No se han encontrado noticias';
 			}
 		}else{
-			for($i=0;$i<sizeof($lista);$i++){
-				$pokeball= $noticias->valoracion($lista[$i]->Id_noticia);
-				//var_dump($pokeball);
-				$contenido=$contenido.'<div class="news"><a href="index.php?action=noticia&id='.$lista[$i]->Id_noticia.'"><img class="imgNews" src="img/'.$lista[$i]->imagen.'">
-				'.$lista[$i]->fecha.'<div class="tituloNews">';
-				if($_GET['lang']=='en'){
-					$contenido=$contenido.$lista[$i]->title.'</div><div class="cuerpoNews">'.$lista[$i]->text.' </div>';
-					$contenido=$contenido.'</a><br><span> Rating news:<span><div class="pball">';
+			if(!isset($_GET['pagina'])&sizeof($lista)<5){
+				for($i=0;$i<sizeof($lista);$i++){
+					$pokeball= $noticias->valoracion($lista[$i]->Id_noticia);
+					//var_dump($pokeball);
+					$contenido=$contenido.'<div class="news"><a href="index.php?action=noticia&id='.$lista[$i]->Id_noticia.'"><img class="imgNews" src="img/'.$lista[$i]->imagen.'">
+					'.$lista[$i]->fecha.'<div class="tituloNews">';
+					if($_GET['lang']=='en'){
+						$contenido=$contenido.$lista[$i]->title.'</div><div class="cuerpoNews">'.$lista[$i]->text.' </div>';
+						$contenido=$contenido.'</a><br><span> Rating news:<span><div class="pball">';
+					}else{
+						$contenido=$contenido.$lista[$i]->titulo.'</div><div class="cuerpoNews">'.$lista[$i]->texto.' </div>';
+						$contenido=$contenido.'</a><br><span> Valoración de la noticia:<span><div class="pball">';
+					}
+					for($j=0;$j<$pokeball;$j++){
+						$contenido=$contenido.'<img height="50px" width="auto" src="img/pokeball.png">';
+					}
+
+					$contenido=$contenido.'</div>';
+					$contenido=$contenido.'</div></div></content>';
+				}	
+			}elseif(!isset($_GET['pagina'])&sizeof($lista)>4){
+				for($i=0;$i<4;$i++){
+					$pokeball= $noticias->valoracion($lista[$i]->Id_noticia);
+					//var_dump($pokeball);
+					$contenido=$contenido.'<div class="news"><a href="index.php?action=noticia&id='.$lista[$i]->Id_noticia.'"><img class="imgNews" src="img/'.$lista[$i]->imagen.'">
+					'.$lista[$i]->fecha.'<div class="tituloNews">';
+					if($_GET['lang']=='en'){
+						$contenido=$contenido.$lista[$i]->title.'</div><div class="cuerpoNews">'.$lista[$i]->text.' </div>';
+						$contenido=$contenido.'</a><br><span> Rating news:<span><div class="pball">';
+					}else{
+						$contenido=$contenido.$lista[$i]->titulo.'</div><div class="cuerpoNews">'.$lista[$i]->texto.' </div>';
+						$contenido=$contenido.'</a><br><span> Valoración de la noticia:<span><div class="pball">';
+					}
+					for($j=0;$j<$pokeball;$j++){
+						$contenido=$contenido.'<img height="50px" width="auto" src="img/pokeball.png">';
+					}
+
+					$contenido=$contenido.'</div>';
+					$contenido=$contenido.'</div></div>';
+					
+					
+					$contenido=$contenido.'</content>';
+
+				}
+				$numpag=sizeof($lista)/4;
+					for($j=0;$j<$numpag;$j++){
+						$contenido=$contenido.'<a href="index.php?action=principal&pagina='.($j+1).'""> '.($j+1).' </a>';
+					}
+			}else{
+				//var_dump($_GET['pagina']);
+				//echo $_GET['pagina'];
+				$inicio=($_GET['pagina']-1)*4;
+				$fin=($_GET['pagina'])*4;
+				if($fin>sizeof($lista)){
+					for($i=$inicio;$i<sizeof($lista);$i++){
+						$pokeball= $noticias->valoracion($lista[$i]->Id_noticia);
+						//var_dump($pokeball);
+						$contenido=$contenido.'<div class="news"><a href="index.php?action=noticia&id='.$lista[$i]->Id_noticia.'"><img class="imgNews" src="img/'.$lista[$i]->imagen.'">
+						'.$lista[$i]->fecha.'<div class="tituloNews">';
+						if($_GET['lang']=='en'){
+							$contenido=$contenido.$lista[$i]->title.'</div><div class="cuerpoNews">'.$lista[$i]->text.' </div>';
+							$contenido=$contenido.'</a><br><span> Rating news:<span><div class="pball">';
+						}else{
+							$contenido=$contenido.$lista[$i]->titulo.'</div><div class="cuerpoNews">'.$lista[$i]->texto.' </div>';
+							$contenido=$contenido.'</a><br><span> Valoración de la noticia:<span><div class="pball">';
+						}
+						for($j=0;$j<$pokeball;$j++){
+							$contenido=$contenido.'<img height="50px" width="auto" src="img/pokeball.png">';
+						}
+
+						$contenido=$contenido.'</div>';
+						$contenido=$contenido.'</div></div>';
+						
+						
+						$contenido=$contenido.'</content>';
+
+					}
+						$numpag=sizeof($lista)/4;
+						for($j=0;$j<$numpag;$j++){
+							$contenido=$contenido.'<a href="index.php?action=principal&pagina='.($j+1).'""> '.($j+1).' </a>';
+						}
 				}else{
-					$contenido=$contenido.$lista[$i]->titulo.'</div><div class="cuerpoNews">'.$lista[$i]->texto.' </div>';
-					$contenido=$contenido.'</a><br><span> Valoración de la noticia:<span><div class="pball">';
-				}
-				for($j=0;$j<$pokeball;$j++){
-					$contenido=$contenido.'<img height="50px" width="auto" src="img/pokeball.png">';
-				}
-				$contenido=$contenido.'</div>';
-				$contenido=$contenido.'</div></div></content>';
-			}	
+	
+					for($i=$inicio;$i<$fin;$i++){
+						$pokeball= $noticias->valoracion($lista[$i]->Id_noticia);
+						//var_dump($pokeball);
+						$contenido=$contenido.'<div class="news"><a href="index.php?action=noticia&id='.$lista[$i]->Id_noticia.'"><img class="imgNews" src="img/'.$lista[$i]->imagen.'">
+						'.$lista[$i]->fecha.'<div class="tituloNews">';
+						if($_GET['lang']=='en'){
+							$contenido=$contenido.$lista[$i]->title.'</div><div class="cuerpoNews">'.$lista[$i]->text.' </div>';
+							$contenido=$contenido.'</a><br><span> Rating news:<span><div class="pball">';
+						}else{
+							$contenido=$contenido.$lista[$i]->titulo.'</div><div class="cuerpoNews">'.$lista[$i]->texto.' </div>';
+							$contenido=$contenido.'</a><br><span> Valoración de la noticia:<span><div class="pball">';
+						}
+						for($j=0;$j<$pokeball;$j++){
+							$contenido=$contenido.'<img height="50px" width="auto" src="img/pokeball.png">';
+						}
+
+						$contenido=$contenido.'</div>';
+						$contenido=$contenido.'</div></div>';
+						
+						
+						$contenido=$contenido.'</content>';
+
+					}
+					$numpag=sizeof($lista)/4;
+						for($j=0;$j<$numpag;$j++){
+							$contenido=$contenido.'<a href="index.php?action=principal&pagina='.($j+1).'""> '.($j+1).' </a>';
+						}
+					}
+				
+				
+			}
+			
 		}
+		$contenido=$contenido.'<button id="cargar">Ver más noticias</button>';
+		/*$contenido=$contenido.'<script>$(function(){
+			    $(".news").slice(0, 2).show();
+			    $("#cargar").click(function(e){
+			        e.preventDefault();
+			        $(".news:hidden").slice(0, 2).show();
+			        if($(".news:hidden").length == 0){
+			            alert("No hay más noticias");
+			        }
+			    })
+			})</script>';*/
+
 		replace_page($contenido,$css,$menu,$pokedex,$banderas,$slider);
 	}
 
@@ -125,7 +234,7 @@ class mvc_controller{
 		}
 	
 		///////////////VALORACION/////////////////////////
-		$pokeball= $noticia1->valoracion($lista[$i]->Id_noticia);
+		$pokeball= $noticia1->valoracion($_GET['id']);
 		//var_dump($pokeball);
 		if($_GET['lang']==en){
 			$contenido=$contenido.'<br> Rating news:<div class="pball">';
@@ -158,7 +267,7 @@ class mvc_controller{
 		//var_dump($notrel);
 		$contenido=$contenido.'<div id="noticiaCategoriaIzq">';
 		for($k=0;$k<2;$k++){
-			$contenido=$contenido.'<img class="imgCategoria" src="img/'.$notrel[$k]->imagen.'">';
+			$contenido=$contenido.'<a href="index.php?action=noticia&id='.$notrel[$k]->Id_noticia.'"><img class="imgCategoria" src="img/'.$notrel[$k]->imagen.'">';
 			if($_GET['lang']==en){
 				$contenido=$contenido.'<div class="tituloCategoria">'.$notrel[$k]->title.'</div>
 			<div class="cuerpoCategoria">'.$notrel[$k]->text;
@@ -167,7 +276,7 @@ class mvc_controller{
 			<div class="cuerpoCategoria">'.$notrel[$k]->texto;
 			}
 			
-			$contenido=$contenido.'</div><div class="etc">...</div>';
+			$contenido=$contenido.'</div><div class="etc">...</div></a>';
 			$pokeball= $noticia1->valoracion($notrel[$k]->Id_noticia);
 			//var_dump($pokeball);
 			$contenido=$contenido.'<div class="pball">';
