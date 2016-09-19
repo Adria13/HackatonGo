@@ -101,6 +101,7 @@ class mvc_controller{
 					$contenido=$contenido.'</content>';
 
 				}
+				$contenido=$contenido."Pagina: ";
 				$numpag=sizeof($lista)/4;
 					for($j=0;$j<$numpag;$j++){
 						$contenido=$contenido.'<a href="index.php?action=principal&pagina='.($j+1).'""> '.($j+1).' </a>';
@@ -134,10 +135,11 @@ class mvc_controller{
 						$contenido=$contenido.'</content>';
 
 					}
-						$numpag=sizeof($lista)/4;
-						for($j=0;$j<$numpag;$j++){
-							$contenido=$contenido.'<a href="index.php?action=principal&pagina='.($j+1).'""> '.($j+1).' </a>';
-						}
+					$contenido=$contenido."Pagina: ";
+					$numpag=sizeof($lista)/4;
+					for($j=0;$j<$numpag;$j++){
+						$contenido=$contenido.'<a href="index.php?action=principal&pagina='.($j+1).'""> '.($j+1).' </a>';
+					}
 				}else{
 	
 					for($i=$inicio;$i<$fin;$i++){
@@ -161,19 +163,17 @@ class mvc_controller{
 						
 						
 						$contenido=$contenido.'</content>';
-
+						
 					}
+					$contenido=$contenido."Pagina: ";
 					$numpag=sizeof($lista)/4;
-						for($j=0;$j<$numpag;$j++){
-							$contenido=$contenido.'<a href="index.php?action=principal&pagina='.($j+1).'""> '.($j+1).' </a>';
-						}
+					for($j=0;$j<$numpag;$j++){
+						$contenido=$contenido.'<a href="index.php?action=principal&pagina='.($j+1).'""> '.($j+1).' </a>';
 					}
-				
-				
+				}			
 			}
-			
 		}
-		$contenido=$contenido.'<button id="cargar">Ver más noticias</button>';
+		//$contenido=$contenido.'<button id="cargar">Ver más noticias</button>';
 		/*$contenido=$contenido.'<script>$(function(){
 			    $(".news").slice(0, 2).show();
 			    $("#cargar").click(function(e){
