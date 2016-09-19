@@ -2,8 +2,9 @@
 class Database{
 	private $conexion;
 	public function conectar(){
-		$this->conexion=mysqli_connect("localhost","root","","pokemon");
-		//$this->conexion=mysqli_connect("...:","usuario","","nombre");
+		//$this->conexion=mysqli_connect("localhost","root","","pokemonbd");
+		$this->conexion=mysqli_connect("54.149.154.44:3306","usuario","pokemon","pokemonbd");
+		//$this->conexion=mysqli_connect("54.149.154.44:3306","root","PpuOFI9tInPx","pokemonbd");
 		$acentos=mysqli_query($this->conexion, "SET NAMES 'utf8'");
 		return $this->conexion;
 	}
